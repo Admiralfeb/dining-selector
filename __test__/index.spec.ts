@@ -16,6 +16,13 @@ describe('Dining Selector', () => {
         expect(instance.options).toEqual(['ABC Place to Eat', ...DEFAULT_OPTIONS.sort()]);
     });
 
+    it('should error on add if item has fewer than 3 characters', () => {
+        expect(() => instance.addOption('')).toThrowError('Option must be greater than 3 characters');
+        expect(() => instance.addOption('a')).toThrowError('Option must be greater than 3 characters');
+        expect(() => instance.addOption('ab')).toThrowError('Option must be greater than 3 characters');
+        expect(() => instance.addOption('abc')).not.toThrowError();
+    });
+
     it('should error on add if the item already exists', () => {
         expect(() => instance.addOption('McDonalds')).toThrowError('Option exists');
     });

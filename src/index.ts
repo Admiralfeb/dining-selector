@@ -18,6 +18,10 @@ export default class DiningSelector {
      * @param option option to add
      */
     addOption(option: string): void {
+        if (option.length < 3) {
+            throw new Error('Option must be greater than 3 characters');
+        }
+
         const foundOption = this._options.find((x) => x.trim().toUpperCase() === option.trim().toUpperCase());
         if (foundOption) {
             throw new Error('Option exists');
