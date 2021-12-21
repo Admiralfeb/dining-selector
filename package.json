@@ -1,6 +1,6 @@
 {
   "name": "@admiralfeb/dining-selector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "library for UI apps to implement a dining selector",
   "main": "dist/index.js",
   "files": [
